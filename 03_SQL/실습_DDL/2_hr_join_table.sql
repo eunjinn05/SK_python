@@ -1,4 +1,4 @@
--- CREATE DATABASE hr_join;
+CREATE DATABASE hr_join;
 USE  hr_join;
 
 
