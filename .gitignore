@@ -1,0 +1,8 @@
+/09_deeplearning_pytorch/data/*
+/09_deeplearning_pytorch/datasets/*
+/09_deeplearning_pytorch/figures/*
+/09_deeplearning_pytorch/models/*
+/09_deeplearning_pytorch/modules/*
+/09_deeplearning_pytorch/saved_models/*
+/09_deeplearning_pytorch/test_img/*
+/09_deeplearning_pytorch/module/*
