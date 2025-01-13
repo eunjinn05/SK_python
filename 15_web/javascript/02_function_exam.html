@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h2>함수 예제</h2>
+
+        <script>
+            // 한줄 주석 - control + /
+            /*  block 주석 - 여러줄 주석에 사용.  */
+
+            //1. 함수 정의
+            function hello1() {
+                alert("경고입니다.");
+            }
+
+            //2. parameter(매개변수) 가 있는 함수
+            function hello2(name, age) {
+                alert("hello2");
+                alert(`이름: ${name}, 나이: ${age}`);
+                if (!name) {
+                    alert("이름 입력");
+                }
+            }
+
+            //5. 기본값이 있는 파라미터.
+            function hello3(name = "무명", age = 0) {
+                console.log(`이름: ${name}, 나이: ${age}`);
+            }
+
+            //4. 반환값이 있는 함수
+            function hello4() {
+                name = prompt("이름을 입력하세요"); //사용자 입력
+                return `이름 : ${name}`;
+            }
+
+            //5. Rest Parameter
+            function hello5(name, age, ...other) {
+                console.log(name, age);
+                console.log(other);
+            }
+
+            //6. 함수 리터럴.
+            let hello6 = function (name) {
+                alert(name);
+            };
+
+            //7. 함수를 argument로 전달.
+            function worker(func) {
+                num1 = 10;
+                num2 = 20;
+                result = func(num1, num2);
+                console.log("계산결과: " + result);
+            }
+
+            function sum(n1, n2) {
+                return n1 + n2;
+            }
+
+            //8. 화살표 함수
+            let arrowFunc1 = (num1, num2) => num1 + num2;
+
+            let arrowFunc2 = (num1, num2) => {
+                result = num1 - num2;
+                console.log(result);
+            };
+        </script>
+    </body>
+</html>

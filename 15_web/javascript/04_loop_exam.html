@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h2>반복문 예제</h2>
+        <script>
+            // 반복문 : while, for , do while, for in
+
+            function whileExam(num) {
+                list = [];
+                while (num < 10) {
+                    list.push(num);
+                    num++;
+                }
+                alert(list);
+            }
+
+            function forExam() {
+                list = [];
+                for (num = 1; num < 10; num++) {
+                    list.push(num);
+                }
+                alert(list);
+            }
+
+            function doWhileExam() {
+                list = [];
+                do {
+                    num = parseInt(
+                        prompt("짝수를 입력하세요. 홀수입력시 종료합니다.")
+                    );
+                    if (num % 2 != 0) {
+                        break;
+                    }
+                    list.push(num);
+                } while (true);
+                alert(list);
+            }
+
+            function forInExam() {
+                list = ["a", "b", "c", "d", "e"];
+
+                for (idx in list) {
+                    console.log(idx + "," + list[idx]);
+                }
+            }
+
+            function forInExam2() {
+                info = {
+                    name: "홍길동",
+                    age: 20,
+                };
+                console.log(info.age);
+                for (key in info) {
+                    console.log(key + "," + info[key]);
+                }
+            }
+        </script>
+    </body>
+</html>

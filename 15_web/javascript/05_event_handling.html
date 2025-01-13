@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <style>
+        #layer {
+            width: 300px;
+            height: 300px;
+            background-color: blue;
+        }
+    </style>
+    <body>
+        <div
+            id="layer"
+            onmouseover='console.log("마우스 IN")'
+            onmouseout='console.log("마우스out")'
+            onclick='alert("클릭")'
+        ></div>
+
+        <input type="text" name="txt" onblur="check(this)" />
+
+        <form
+            action="/test"
+            method="post"
+            id="form"
+            onsubmit="return checkForm2()"
+        >
+            이름: <input type="text" name="name" id="name" /><br />
+            나이: <input type="text" name="age" id="age" /><br />
+            <input type="button" value="등록 번튼" onclick="checkForm()" />
+            <input type="submit" value="등록 폼 Submit 버튼" />
+        </form>
+
+        <script>
+            function checkForm() {
+                nameTF = document.getElementById("name");
+                ageTF = document.getElementById("age");
+                name = nameTF.value;
+                age = ageTF.value;
+
+                if (!name) {
+                    alert("이름을 입력하세요");
+                    nameTF.focus();
+                    return;
+                } else {
+                    if (name.length > 5) {
+                        alert("이름은 5글자까지 가능합니다.");
+                        nameTF.value = "";
+                        nameTF.focus();
+                        return;
+                    }
+                }
+                if (!age) {
+                    alert("나이를 입력하세요");
+                    ageTF.focus();
+                    return;
+                } else {
+                    ageNum = parseInt(age);
+                    if (!ageNum) {
+                        alert("나이는 숫자만 가능합니다.");
+                        ageTF.value = "";
+                        ageTF.focus();
+                        return;
+                    }
+                }
+
+                form = document.getElementById("form");
+                form.submit();
+            }
+
+            function checkForm2() {
+                nameTF = document.getElementById("name");
+                ageTF = document.getElementById("age");
+                name = nameTF.value;
+                age = ageTF.value;
+
+                if (!name) {
+                    alert("이름을 입력하세요");
+                    nameTF.focus();
+                    return false;
+                } else {
+                    if (name.length > 5) {
+                        alert("이름은 5글자까지 가능합니다.");
+                        nameTF.value = "";
+                        nameTF.focus();
+                        return false;
+                    }
+                }
+                if (!age) {
+                    alert("나이를 입력하세요");
+                    ageTF.focus();
+                    return false;
+                } else {
+                    ageNum = parseInt(age);
+                    if (!ageNum) {
+                        alert("나이는 숫자만 가능합니다.");
+                        ageTF.value = "";
+                        ageTF.focus();
+                        return false;
+                    }
+                }
+            }
+            function check(text_input) {
+                alert(text_input.value);
+                text_input.value = "";
+            }
+
+            function mouseMove(event) {
+                console.log(event);
+            }
+        </script>
+    </body>
+</html>
